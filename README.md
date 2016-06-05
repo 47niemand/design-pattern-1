@@ -1,2 +1,3 @@
-# design-pattern-1
+# Design Pattern Dojo
+
 Reading, sharing and learning design patterns for hobby. :)
