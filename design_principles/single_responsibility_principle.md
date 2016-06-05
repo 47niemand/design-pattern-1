@@ -1,3 +1,4 @@
-# Single Responsibility Principle
+Single Responsibility Principle
+====
 
 Каждый класс/объект/метод отвечает только за одну присущую им функциональность
