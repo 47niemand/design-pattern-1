@@ -36,7 +36,7 @@
    * Visitor Pattern
    * Memento Pattern
    * Concurrency Pattern
-* Another Patterns
+* [Another Patterns](another_patterns/another_patterns.md)
    * Registry of Singleton Pattern
 * Compare Patterns
 
