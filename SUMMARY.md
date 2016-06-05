@@ -4,7 +4,7 @@
 * [Introdution](README.md)
 * [Design Principles](design_principles/design_principles.md)
    * [Single Responsibility Principle](design_principles/single_responsibility_principle.md)
-   * Liskov Substitution Principle
+   * [Liskov Substitution Principle](design_principles/liskov_substitution_principle.md)
    * Dependency Inversion Principle
    * Interface Segregation Principle
    * Least Knowledge Principle
