@@ -1,9 +1,8 @@
 # Summary
 
 * Introdution
-
 * [Introdution](README.md)
-* Design Principles
+* [Design Principles](design_principles/design_principles.md)
    * Single Responsibility Principle
    * Liskov Substitution Principle
    * Dependency Inversion Principle
