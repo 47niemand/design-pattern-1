@@ -8,7 +8,7 @@
    * [Dependency Inversion Principle](design_principles/dependency_inversion_principle.md)
    * [Interface Segregation Principle](design_principles/interface_segregation_principle.md)
    * Least Knowledge Principle
-   * Open Close Principle
+   * [Open Close Principle](design_principles/open_close_principle.md)
 * [Creational Patterns](creational_patterns/creational_patterns.md)
    * Singleton Pattern
    * Simple Factory Pattern
