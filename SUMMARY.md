@@ -14,7 +14,7 @@
    * Simple Factory Pattern
    * Factory Method Pattern
    * Abstract Factory Pattern
-   * Builder Pattern
+   * [Builder Pattern](creational_patterns/builder_pattern.md)
    * Prototype Pattern
 * [Structural Patterns](structural_patterns/structural_patterns.md)
    * Proxy Pattern
