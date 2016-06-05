@@ -1,3 +1,4 @@
-# Liskov Substitution Principle
+Liskov Substitution Principle
+===
 
 Объекты в программе могут быть заменены их наследниками без изменений свойств программы
