@@ -24,7 +24,7 @@
    * Facade Pattern
    * Adapter Pattern
    * Composite Pattern
-* Behavioral Patterns
+* [Behavioral Patterns](behavioral_patterns/behavioral_patterns.md)
    * Template Method Pattern
    * Command Pattern
    * Strategy Pattern
