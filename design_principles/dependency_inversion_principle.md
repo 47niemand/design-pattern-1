@@ -1,3 +1,4 @@
-# Dependency Inversion Principle
+Dependency Inversion Principle
+===
 
-Зависимость на абстракции но не на реализации
+> Зависимость на абстракции но не на реализации
