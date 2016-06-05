@@ -1,6 +1,6 @@
 # Summary
 
-* Introdution
+* Introduction
 * [Introdution](README.md)
 * [Design Principles](design_principles/design_principles.md)
    * Single Responsibility Principle
