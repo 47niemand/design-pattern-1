@@ -9,7 +9,7 @@
    * Interface Segregation Principle
    * Least Knowledge Principle
    * Open Close Principle
-* Creational Patterns
+* [Creational Patterns](creational_patterns/creational_patterns.md)
    * Singleton Pattern
    * Simple Factory Pattern
    * Factory Method Pattern
