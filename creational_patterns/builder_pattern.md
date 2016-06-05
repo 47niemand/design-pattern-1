@@ -1,16 +1,26 @@
-# Builder Pattern
+Builder Pattern
+=========
 
-# Intent
+# Story
+Вам запропоновано створити систему планування екскурсій по Паттернленду - новому парку розваг. Гості парку можуть вибрати готель, замовити квитки на атракціони, зарезервувати місця в ресторані і навіть замовити спеціальні заходи. Поїздки можуть відрізнятися за кількістю днів і складу розважальної програми. Наприклад, місцевий житель не бажає зупинятися у готелі, але хоче замовити обід та спеціальні заходи. Другий гість прилітає літаком і йому необхідно забронювати номер в готелі, столик в ресторані і квитки на заходи. Таким чином, нам потрібна гнучка структура даних, яка може представляти програму поселення з усіма можливими варіаціями; крім того, побудова програми може складатися з декількох кроків.
 
-* Separate the construction of a complex object from its representation so that the same construction process can create different representations.
-* Parse a complex representation, create one of several targets.
+# ~~Problem~~
 
-> Decentralized structure of a complex object, so that the same construction process can create different styles. Resolve complex representation, to create one of several objectives.
+# Solution
+
+---
+# Цель
+
+* Отделить создание сложного объекта от его представления так, что тот же самый процесс создания может создавать различные 
+представления. 
+* Разбор сложного представления, создание одной из нескольких целеой.
+
 
 
 # Structure
 
 >TODO: add UML structure
+
 
 # Example
 >TODO: add Java example code
