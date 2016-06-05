@@ -1,9 +1,7 @@
 # Summary
 
-
 * Examples
-  * Design a Vending Machine in Java
---- 
+   * [Design a Vending Machine in Java](design_a_vending_machine_in_java.md)
 * [Introdution](README.md)
 * [Design Principles](design_principles/design_principles.md)
    * [Single Responsibility Principle](design_principles/single_responsibility_principle.md)
@@ -43,5 +41,4 @@
 * [Another Patterns](another_patterns/another_patterns.md)
    * Registry of Singleton Pattern
 * Compare Patterns
-
 
