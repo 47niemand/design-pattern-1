@@ -1,34 +1,35 @@
 # Дизайн торгвого автомата
 
 
-Как Вы проектируете Торговый автомат в Java?? is one of the good Java interview questions mostly asked at Senior level Java developer Interviews. In a typical coding interview, you will be given a problem statement to develop a vending machine and within a limited time, usually, 2 to 3 hours you need to produce design document, working code and unit test in Java. One of the key advantages of such Java interviews is that you can test many essential skills or a candidate in one go. In order to complete  the design, coding, and unit testing of  a Vending machine, a candidate needs to be really good in all three departments. By the way, this kind of real world problem is also a good exercise to improve your object-oriented analysis and design skills ([see here](http://javarevisited.blogspot.sg/2014/01/10-tips-to-improve-programming-skill-become-better-programmer.html)), which is very important if you want to become a good application developer.
+Как Вы спроектируете Торговый автомат в Java? Это один из хороших вопросов на интервью по Java, который может быть задан на собеседованиях уровня Senior developer. Вам будет дана постановка задачи разработать Торговый автомат. В течение ограниченного времени, как правило, 2-3 часа, вам необходимо  спроектировать  дизайн, написать рабочий код и unit тесты на Java.
 
-By designing a vending machine in Java or any other object-oriented language, you not only learn basics e.g. Encapsulation, Polymorphism or Inheritance but also learns subtle details of how to use an abstract class and interface (see here) while solving a problem or designing an application.
+Одним из ключевых преимуществ таких Java интервью является, что  сразу можно проверить многие основные навыки кандидата. Для завершения проектирования, кодирования и unit тестирования торгового автомата, кандидат должен быть действительно хороший во всех трех областях. Кстати, подобные задачи из реального мира  является хорошими упражнениями для улучшения навыков объектно ориентированного анализа и дизайна ([смотри тут](http://javarevisited.blogspot.sg/2014/01/10-tips-to-improve-programming-skill-become-better-programmer.html)), который является очень важным, если вы хотите стать хорошим разработчиком.
 
-Usually, this kind of problem also gives you an opportunity to utilize Java design patterns, as in this problem we will be using Factory method pattern for creating different types of Vending Machine. I have talked about this question when I shared 20 software design questions in Java ([here](http://javarevisited.blogspot.com/2012/03/10-object-oriented-design-principles.html)), and after that, I receive a lot of feedback to provide a solution for that question.
+Разрабатывая автомат в Java или любом другом объектно ориентированным языке, вы не только изучаете основы например, инкапсуляция, полиморфизм или наследования, но также узнаете тонкие детали о том, как использовать абстрактный класс и интерфейс (см. здесь) при решении задач или разработке приложения.
 
-This two-part series of posts will provide a solution of Vending machine problem in Java. By the way, this problem can be solved in a different way, and you should try to do that before looking into the solution given here. This is also an opportunity to revisit SOLID and OOPS design principles (see here) and get ready to use them in your code. You'll find many of them are applicable when you design vending machine in Java.
+Как правило такого рода задачи дают возможность использовать шаблоны проектирования Java, например, в этой задаче будет использован  шаблон фабрики для создания различных типов торговых автоматов. Об этом можно почитать ([здесь](http://javarevisited.blogspot.com/2012/03/10-object-oriented-design-principles.html)).
 
-# Problem Statement
+Этоа серия из двух статей будет показывать решение задачи по созданию торгвого автомата в Java. Кстати, эта задача  может быть решена различными способами. Это также дает возможность пересмотреть принципы проектирования SOLID и ООП паттерны (см. здесь) и уметь использовать их в коде. 
 
-You need to design a Vending Machine which
+# Постановка задачи
 
+Вам необходимо разработать Торговый автомат который:
 
-1. Accepts coins of 1,5,10,25 Cents i.e. penny, nickel, dime, and quarter.
-2. Allow user to select products Coke(25), Pepsi(35), Soda(45)
-3. Allow user to take refund by canceling the request.
-4. Return selected product and remaining change if any
-5. Allow reset operation for vending machine supplier.
+1. Принимает монеты определенного номинала.
+2. Предостовляет возможность пользователю выбрать продукты.
+3. Разрешите клиенту получить возврат денег вслучае отмены заказа.
+4. Выдать выбранные товар и если необходмо сдачу
+5. Обеспечить вомзжность выполнить операцию сброса для сервисного обслуживания.
 
-The requirement statement is the most important part of the problem. You need to read problem statement multiple times to get a high-level understanding of the problem and what are you trying to solve. Usually, [requirements are not very clear](http://javarevisited.blogspot.com/2015/01/difference-between-functional-and-nonfunctional-requirements-software-development.html) and you need to make a list of your own by reading through problem statement.
+Постановка задачи является наиболее важной частью. Нужно несколько раз перечитать постановку чтобы как можно лучше понять суть проблемы и то, что вы пытаетесь решить. Обычно [требования не очень ясны](http://javarevisited.blogspot.com/2015/01/difference-between-functional-and-nonfunctional-requirements-software-development.html) и вам нужно составить их перечень самостоятельно, читая постановка задачи.
 
-I like point based requirement because it's easy to track. Some of the requirement are also implicit but it's better to make it explicit in your list e.g. In this problem, vending machine should not accept a request if it doesn't have sufficient change to return
+Мне нравится требования на основе списков, потому их легко  отслеживать. Некоторые требования могут быть неявные, поэтому в вашем списке лучше их сделать явными. Например в этой задаче, автомат не должен выполнять запрос, если нет необходимых средств на сдачу.а
 
-Unfortunately, there is not many book or course which teach you these skills, you need to develop them by yourself by doing some real world work. Though, two of the book which helped me to improve by object-oriented analysis and design skills are [Head First Object Oriented Design and Analysis](http://www.amazon.com/dp/0596008678/?tag=javamysqlanta-20) 1st edition by Brett D. McLaughlin. One of the best book if you don't have much experience in object oriented programming.
+К сожалению существует не много книгу или курсов, которые научат вас этим навыкам. Необходимо развивать их самостоятельно, выполняя рельные задачи. Хотя, две книги, которые помогли мне улучшить навыки объектно ориентированного анализа и проектирования  это [Глава первая объектно-ориентированного проектирования и анализа](http://www.amazon.com/dp/0596008678/?tag=javamysqlanta-20) 1-е издание, Брэт Маклафлин д. Одини из лучших книги, если у вас нет большого опыта работы в объекте-ориентированное программирование.
 
 ![Read more: http://javarevisited.blogspot.com/2016/06/design-vending-machine-in-java.html#ixzz4AjWrUb9m](https://3.bp.blogspot.com/-lQExXlp7hDo/V1OQ5QaEfaI/AAAAAAAAGGw/MV2964R-1-klxt4to7VcR-iciBbkZ4qjACLcB/s320/Head%2BFirst%2BAnalaysis%2Band%2BDesign.JPG)
 
-Another book which is very good on developing application and system design skill is [UML for Java Programmers by Robert C. Martin](http://www.amazon.com/UML-Java%C2%BF-Programmers-Robert-Martin/dp/0131428489?tag=javamysqlanta-20), one of my favorite author. I have read several books of him e.g. Clean Code, Clean Coder and a book on software development using Agile. He is one of the best in teaching OOP concept.
+Еще одна очень хорошая книга по разработке приложений и дизайну систем дизайн является [[UML for Java Programmers by Robert C. Martin](http://www.amazon.com/UML-Java%C2%BF-Programmers-Robert-Martin/dp/0131428489?tag=javamysqlanta-20), один из моих любимых автора. Я прочитал несколько книг о нем, например чистый код, чистый кодера и книгу по разработке программного обеспечения с использованием Agile. Он является одним из лучших в преподавании OOP концепция.
 
 This book has got a similar problem about designing a coffee machine. So, if you want to practice more or try your object oriented design skill, you can refer to that problem. It's also a very good learning exercis
 
