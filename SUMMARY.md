@@ -16,7 +16,7 @@
    * Abstract Factory Pattern
    * Builder Pattern
    * Prototype Pattern
-* Structural Patterns
+* [Structural Patterns](structural_patterns/structural_patterns.md)
    * Proxy Pattern
    * Bridge Pattern
    * Decorator Pattern
