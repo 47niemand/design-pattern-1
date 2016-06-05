@@ -3,7 +3,7 @@
 * Introduction
 * [Introdution](README.md)
 * [Design Principles](design_principles/design_principles.md)
-   * Single Responsibility Principle
+   * [Single Responsibility Principle](design_principles/single_responsibility_principle.md)
    * Liskov Substitution Principle
    * Dependency Inversion Principle
    * Interface Segregation Principle
