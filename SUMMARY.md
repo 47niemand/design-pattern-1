@@ -1,6 +1,5 @@
 # Summary
 
-* [Introduction](introduction.md)
 * [Introdution](README.md)
 * [Design Principles](design_principles/design_principles.md)
    * [Single Responsibility Principle](design_principles/single_responsibility_principle.md)
