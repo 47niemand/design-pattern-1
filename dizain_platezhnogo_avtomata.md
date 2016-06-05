@@ -1,4 +1,4 @@
-# Дизайн платежного автомата
+# Дизайн торгвого автомата
 
 
 Как Вы проектируете Торговый автомат в Java?? is one of the good Java interview questions mostly asked at Senior level Java developer Interviews. In a typical coding interview, you will be given a problem statement to develop a vending machine and within a limited time, usually, 2 to 3 hours you need to produce design document, working code and unit test in Java. One of the key advantages of such Java interviews is that you can test many essential skills or a candidate in one go. In order to complete  the design, coding, and unit testing of  a Vending machine, a candidate needs to be really good in all three departments. By the way, this kind of real world problem is also a good exercise to improve your object-oriented analysis and design skills ([see here](http://javarevisited.blogspot.sg/2014/01/10-tips-to-improve-programming-skill-become-better-programmer.html)), which is very important if you want to become a good application developer.
