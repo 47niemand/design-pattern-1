@@ -31,57 +31,54 @@
 
 Еще одна очень хорошая книга по разработке приложений и дизайну систем дизайн это [UML for Java Programmers by Robert C. Martin](http://www.amazon.com/UML-Java%C2%BF-Programmers-Robert-Martin/dp/0131428489?tag=javamysqlanta-20), один из моих любимых авторов. Я прочитал несколько книг о нем, например "Clean Code", "Clean Coder" и книгу по разработке программного обеспечения с использованием Agile. Он является одним из лучших в преподавании OOП концепции.
 
-В этой книге есть аналогичная проблема о проектировании кофе-машина. Так что, если вы хотите бльше практики или попробовать ваши навыки проектирования объектно-ориентированный, вы можете обратиться к этой проблеме. Это также очень хорошее обучение exercis
+В этой книге рассматривается аналогичная задача о проектировании кофе-машины. Так что, если вы хотите попрактиковаться или проверить навыки ООД, вы можете обратиться к этой проблеме. Также это очень хорошее упражнение для обучения.
 
-This book has got a similar problem about designing a coffee machine. So, if you want to practice more or try your object oriented design skill, you can refer to that problem. It's also a very good learning exercis
+# Решение и Код
 
-# Solution and Coding
-
-My implementation of Java Vending Machine has following classes and interfaces :
-
+Моя реализация торгового автомата содежрит следующие классы и интерфейсы:
 
 #### VendingMachine
 
-It defines the public API of vending machine, usually all high-level functionality should go in this class
+Он определяет публичный API торгового автомата, как правило, все функциональные интерфейсы высокого уровня должны быть описаны в этом классе
 
 #### VendingMachineImpl
 
-Sample implementation of Vending Machine
+Пример реализации торговго автомата
 
 #### VendingMachineFactory
  
-A Factory class to create different kinds of Vending Machine
+Класс-фабрика для создания различных видов торговых автоматов
 
 #### Item
-> 
-Java Enum to represent Item served by Vending Machine
+ 
+Перечисляемый тип чтобы описать набор товаров продаваемых торговым автоматом
 
 #### Inventory
  
-Java class to represent an Inventory, used for creating case and item inventory inside Vending Machine
+Класс для учета, используется для учета товаров и денег внутри торгового автомата
 
 #### Coin
  
-Another Java Enum to represent Coins supported by Vending Machine
+Перечисляемый тип для описания монет поддерживаемых торговым автоматом
 
 #### Bucket
  
-A parameterized class to hold two objects. It's kind of Pair class.
+Обобщенный класс для хранения двух объектов. 
 
 #### NotFullPaidException
  
-An Exception thrown by Vending Machine when a user tries to collect an item, without paying the full amount.
+Исключение возникает, когда пользователь пытается забрать товар, не заплатив полную сумму.
 
 #### NotSufficientChangeException
  
-Vending Machine throws this exception to indicate that it doesn't have sufficient change to complete this request.
+Торговый автомат выдает это исключение, чтобы показать, нет необхомой суммы на сдачу.
 
 #### SoldOutExcepiton
  
-Vending Machine throws this exception if the user request for a product which is sold out.
+Исключаение возникает если пользователь хочет приобрести продукт который уже продан.
 
 # How to design Vending Machine in Java
-Here is the complete code of Vending Machine in Java, make sure to test this code, and let me know if you face any issue.
+Вот полный код торгово автомата, протестируте код и дайте мне знаать если будут какие либо ошибки.
 
 #### VendingMachine.java
 
