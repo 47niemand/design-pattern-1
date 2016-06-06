@@ -3,7 +3,7 @@
 * Examples
    * [Design a Vending Machine in Java](design_a_vending_machine_in_java.md)
    * [Дизайн торгвого автомата](dizain_platezhnogo_avtomata.md)
-   * Дизайн торгвого автомата
+   * [Дизайн торгвого автомата](dizain_torgvogo_avtomata.md)
 * [Introdution](README.md)
 * [Design Principles](design_principles/design_principles.md)
    * [Single Responsibility Principle](design_principles/single_responsibility_principle.md)
