@@ -39,7 +39,7 @@
 
 #### VendingMachine
 
-Он определяет публичный API торгового автомата, как правило, все функциональные интерфейсы высокого уровня должны быть описаны в этом классе
+Класс определяет публичный API торгового автомата, как правило, все функции высокого уровня должны быть описаны в этом классе
 
 #### VendingMachineImpl
 
@@ -77,57 +77,61 @@
  
 Исключаение возникает если пользователь хочет приобрести продукт который уже продан.
 
-# How to design Vending Machine in Java
+---
+
+# Как разработать торговоый автомат на Java
 Вот полный код торгово автомата, протестируте код и дайте мне знаать если будут какие либо ошибки.
 
 #### VendingMachine.java
 
-The public API of vending machine, usually all high-level functionality should go in this class
+Публичный интерфейс торгового автомата, как правило, все функциональные возможности высокого уровня должны быть описаны в нем
 
 
 #### VendingMachineImpl.java
 
-A sample implementation of VendingMachine interface represents a real world Vending Machine , which you see in your office, bus stand, railway station and public places.
+Пример реализации интерфейса автомата. Предоставляет собой реальный автомат, который есть в вашем офисе, на автобусной остановке, или общественных местх
 
 
 #### VendingMachineFactory.java
 
-A Factory class to create different kinds of Vending Machine
+Класс-фабрика для создания различных видов торговых автоматов
 
 
 #### Item.java
 
-Java Enum to represent Item served by Vending Machine
+Перечисляемый тип чтобы описать набор товаров продаваемых торговым автоматом
 
 
 #### Inventory.java
 
-A Java class to represent an Inventory, used for creating case and item inventory inside Vending Machine.
+Класс используется для учета товаров и денег внутри торгового автомата.
 
 
 #### VendingMachine.java
 
-The public API of vending machine, usually all high-level functionality should go in this class
+Интерфейс торгового автомата, все функциональные возможности высокого уровня должны быть описаны тут.
 
 
 #### Bucket.java
 
-A parameterized utility class to hold two objects.
+Обобщенный служебный класс для хранения пары обхектов.
+
 
 ####NotFullPaidException.java
 
-An Exception, thrown by Vending Machine when a user tries to collect an item, without paying the full amount.
+Исключение взникающее когда пользователь пытается получить товар, не заплатив полную сумму.
 
 
 #### NotSufficientChangeException.java
 
-Vending Machine throws this exception to indicate that it doesn't have sufficient change to complete this request.
+Исключение чтобы показать, что торговый автомат не содержит достаточно монет для выполнения запроса.
 
 #### SoldOutException.java
 
-The Vending Machine throws this exception if the user request for a product which is sold out
+Исключение воникающее если будет запрошен уже проданный товар.
 
+---
 
-That's all in this first part of **how to design a vending machine in Java**. In this part, we have solved the problem by creating all the classes and writing all code, but unit test and design document are still pending, which you will see in the second part of this article.
+На этом все в первой части сатьи **, как спроектировать автомат по продаже в Java **. В этой части, мы решили эту проблему, создав все классы и написали весь код, но юнит-тестирование и дизайн документа не рализованы, они будут во второй части этой статьи.
 
-If you want you can try to run this problem by creating the Unit test, or maybe make it an application by using a thread and then use a different thread to act as the user. You can also read UML for Java Programmers by Robert C. Martin in the meantime.
+Если вы хотите, вы можете попробовать проверить это приложение создав необходимые юнит-тесты, или реализовать это приложение использую потоки, и чтоб отдельный поток выполнял роль пользователя.
