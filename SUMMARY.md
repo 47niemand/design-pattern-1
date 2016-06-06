@@ -1,7 +1,6 @@
 # Summary
 
 * Examples
-   * [Дизайн торгвого автомата](dizain_platezhnogo_avtomata.md)
    * [Дизайн торгвого автомата](dizain_torgvogo_avtomata.md)
 * [Introdution](README.md)
 * [Design Principles](design_principles/design_principles.md)
