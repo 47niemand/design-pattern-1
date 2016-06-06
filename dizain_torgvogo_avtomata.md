@@ -30,7 +30,11 @@
 ![Read more: http://javarevisited.blogspot.com/2016/06/design-vending-machine-in-java.html#ixzz4AjWrUb9m](https://3.bp.blogspot.com/-lQExXlp7hDo/V1OQ5QaEfaI/AAAAAAAAGGw/MV2964R-1-klxt4to7VcR-iciBbkZ4qjACLcB/s320/Head%2BFirst%2BAnalaysis%2Band%2BDesign.JPG)
 
 Еще одна очень хорошая книга по разработке приложений и дизайну систем дизайн это [UML for Java Programmers by Robert C. Martin](http://www.amazon.com/UML-Java%C2%BF-Programmers-Robert-Martin/dp/0131428489?tag=javamysqlanta-20), один из моих любимых авторов. Я прочитал несколько книг о нем, например "Clean Code", "Clean Coder" и книгу по разработке программного обеспечения с использованием Agile. Он является одним из лучших в преподавании OOП концепции.
+
+![](https://4.bp.blogspot.com/-GM39T4LV9wA/V1ORHdHmZ2I/AAAAAAAAGG4/cq2xSrQDYLgEZNYigkTu-P9Z9GgJzPAZACLcB/s320/UML%2Bfor%2BJava%2BProgrammers%2Bby%2BUncle%2BBob.jpg)
+
 В этой книге рассматривается аналогичная задача о проектировании кофе-машины. Так что, если вы хотите попрактиковаться или проверить навыки ООД, вы можете обратиться к этой проблеме. Также это очень хорошее упражнение для обучения.
+
 
 # Решение и Код
 
@@ -130,6 +134,9 @@
 #### SoldOutException.java
 
 >Исключение воникающее если будет запрошен уже проданный товар.
+
+
+![](vendingmachine.png)
 
 ---
 На этом все в первой части сатьи **, как спроектировать автомат по продаже в Java **. В этой части, мы решили эту проблему, создав все классы и написали весь код, но юнит-тестирование и дизайн документа не рализованы, они будут во второй части этой статьи.
