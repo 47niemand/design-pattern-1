@@ -153,7 +153,7 @@ public class VendingMachineTest {
  
 Вот пример [дизайн-документа](https://en.wikipedia.org/wiki/Software_design_description). Итак, не очень много, но представляет собой письменное описание программного продукта. Так как на реальном испытании - время критично - вы должны найти баланс временем на написание кода, тестов и составления документации. Лучше выбирать текст чем иллюстрацию. Если вы хорошо владеете UML то добавить диаграмму классов будет безусловно тут полезно.
 
-В SDD документ в Java должны включать такие разделы
+В SDD документ обычно могут быть включены такие разделы
 - Описание решения
 - Разработка решения и структуры данных
 - Все классы и их назначение
@@ -174,38 +174,42 @@ public class VendingMachineTest {
 
 Включать в раздел описание решаемой задачи важно если документ предназначен для тех кто не очень знаком с пердметной областью.
 
-#### Main interface, classes and Exceptions
+* Интерфейса, классы, и исключеня 
+  * VendingMachine - интерфейс, который определяет публичный API в торговом автомате
+  * VendingMachineImpl - реализация интерфейса платежного автомтаа
+  * Inventory - используется для хранения объектов, реализация представляет собой обертку или адаптер над java.util.Map
+  * Item - перечисление (еnum) для представления набора товаров поддерживаемых торгвым автоматаом.
+  * Coin - перечисление (еnum) для представления набора монет которые принимаются торогвоым автоматом.
+  * Bucket - Класс для хранения двх типов вместе.
+  * SoldOutException - исключение генерируется, когда пользователь выбирает продукт, который продан
+  * NotSufficientChangeException - генерируется когда не необходмой суммы на сдачу для завершения операции.
+  * NotFullPaidException - генерируется, когда пользователь пытается получить товар, не заплатив его полную стоимость.
 
-* VendingMachine - an interface which defines public API of VendingMachine
-* VendingMachineImpl - a general purpose implementation of VendingMachine interface
-* Inventory - A type-safe inventory for holding objects, which is an ADAPTER or WRAPPER over java.util.Map
-* Item - type-safe Enum to represent items supported by vending machine.
-* Coin - type-safe Enum to represent coins, which is acceptable by vending machine.
-* Bucket - A Holder class for holding two types together.
-* SoldOutException - thrown when user selects a product which is sold out
-* NotSufficientChangeException - thrown when Vending machine doesn't have enough change to support the current transaction.
-* NotFullPaidException - thrown when the user tries to collect an item, without paying the full amount.
+* Используемые структуры данных
+  - ассоциативный массив (в Java API java.util.Map) используется для хранения товаров и денег внутри автомата.
+  - Список (List) используется сдачи, поскольку он может содержать дубликаты, тоесть несколько монет одного и того же номинала.
+  
+ 
+* Обяснения выбора дизайна
+  - [Паттерн Фабрика](Factory design pattern) используется для инкапсуляции логики создания торгового автомата
+  - Шаблон адаптер используется для создания мехпнзма учета путем обертывания в java.util.Map
+  - java.lang.Enum используется для представления Товаров и Монет потому что он обладает такми приемуществами
+    * на этапе компилации исключена возможность возникновения ошибок согласования типов, нет возможности использовать неверны тип помет или товаров.
+    * нет необходимости проверок что выбраны действительный товар или монета.
+    * могут повторно использоваться (reusable) и хорошо инкапсулируются.
+  - long используется для представления цен и суммы продаж, являющиеся целыми величинами, потому что учет ведется в центах.
 
-* Data structures used
-  - Map data structure is used to implement cash and item inventories.
-  - The List is used to returning changes because it can contain duplicates, i.e. multiple coins of the same denomination.
-* Motivation behind design decisions
-  - Factory design pattern is used to encapsulate creation logic of VendingMachine.
-  - Adapter pattern is used to create Inventory by wrapping java.util.Map
-  - java.lang.Enum is used to represent Item and Coins, because of following benefits
-    * compile time safety against entering an invalid item and invalid coin.
-    * no need to write code for checking if selected item or entered coin is valid.
-    * reusable and well encapsulated.
-  - long is used to represent price and totalSales, which are the amount because we are dealing in cents.
-
-Not used BigDecimal to represent money, because the vending machine can only hold limited amount, due to finite capacity of coin inventory.
+Для хранения денег не используется BigDecimal, потому что автомат может содержать только ограниченную сумму денег, из-за физичеких ограничений для хранения монет.
 
 ###2) Low Leven Design
 
-1) ?
+представляет собой процесс проектирования на уровне компонентов, который следует шаг за шагом процесс уточнения. Этот процесс может быть использован для проектирования структур данных, необходимой архитектуры программного обеспечения, исходный код и, в конечном счете, алгоритмы производительности. В целом, организация данных может быть определена в ходе анализа требований, а затем уточнены в процессе проектирования данных работ. После сборки, каждый компонент задается в деталях
 
-* Methods
-   -  The getChange() method uses a greedy algorithm to find out whether we have sufficient coins to support an amount.
+
+1) Описание методов
+
+* Методы (Methods)
+   -  Метод getChange() method uses a greedy algorithm to find out whether we have sufficient coins to support an amount.
 
 * Initialization
   - When Vending Machine will be created, it's initialized with default cash and item inventory. current with quantity 5 for each coin and item.
