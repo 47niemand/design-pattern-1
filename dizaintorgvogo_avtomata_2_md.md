@@ -231,4 +231,7 @@ public class VendingMachineTest {
 
 На этом завершается, заключительная, вторая часть статьи посвященной разработке и реализации торгового автомат на Java с использованием объектно-ориентированного анализа и проектирования. Если вы только начали изучать OOPS или Java, я рекомендую выполнять похожие упражнения чтобы улучшить свои навыки проектирования в Java. Вы будете сталкиваться с множеством проблем, которые будут направлять вас в дальнейшем изучение и понимание основной OOPS концепции. 
 
-http://javarevisited.blogspot.com/2016/06/java-object-oriented-analysis-and-design-vending-machine-part-2.html
+>Java Object Oriented Analysis and Design Problem - Vending Machine Part 2 
+>
+Read more: http://javarevisited.blogspot.com/2016/06/java-object-oriented-analysis-and-design-vending-machine-part-2.html
+
