@@ -151,89 +151,84 @@ public class VendingMachineTest {
 ## Design Document
 
  
-Here is a sample design document for Vending Machine problem. Well, it's not that great but conveys my design decisions in text format. Since in a real test, time is critical you need to balance your time between coding, testing, and designing activity, it's better to choose text over an image. If you are good with UML than adding a class diagram would certainly help here.
+Вот пример [дизайн-документа](https://en.wikipedia.org/wiki/Software_design_description). Итак, не очень много, но представляет собой письменное описание программного продукта. Так как на реальном испытании - время критично - вы должны найти баланс временем на написание кода, тестов и составления документации. Лучше выбирать текст чем иллюстрацию. Если вы хорошо владеете UML то добавить диаграмму классов будет безусловно тут полезно.
 
-In Short Design Document in Java Should include
-- description of the solution
-- design decision and data structures
-- All classes and there responsibility
-- description of the package
-- description of methods
-- the motivation of decision e.g. why this design pattern, why enum, why BigDecimal etc?
-- Flow Chart of couple of use cases
-- UML Diagram
+В SDD документ в Java должны включать такие разделы
+- Описание решения
+- Разработка решения и структуры данных
+- Все классы и их назначение
+- Описание пакета
+- Описание методов
+- Обсновление решения, например почему выбран именно этот шаблон дизайна, почему используются перечисления (enum), почему используется BigDecimal  и.т.
+- Блок-схема нескольких случаев использования
+- UML Диаграмма
 - Assumption
-- Risk
-- Benefits
+- Риски
+- Приемущества(benefits)
+  
 
-Here is our sample design document, it's very basic because I have generated it very quickly, but it's good for learning and doing Object Oriented Analysis and design. One thing which I would like to add on this document is UML class diagram because that's another way to convey your design to fellow Java developers. I have  added it to this discussion. If you want to learn UML then don't forget to check out UML for Java Programmers by Robert C. Martin
-
-Java Object Oriented Analysis and Design Problem - Vending Machine Part 2
+Вот пример дизайн документа, в нем отражены только основные моменты, хорошо подходят для обучения и понимания ООД. Одна вещь, которую я хотел бы добавить к этому документу является диаграмма классов UML, потому что это еще один способ передать свой дизайн коллегам разработчиков Java. Я добавил его к обсуждению этого вопроса. 
 
 
-1) High-level Design
-Includes overview of the problem, not necessary if you are writing this as part of the test because evaluator should be familiar with problem specification. Important if your design document is intended for someone who is not very familiar with the problem domain.
+### 1) High-level Design
 
-    - Main interface, classes and Exceptions
-          - VendingMachine - an interface which defines public API of VendingMachine
-          - VendingMachineImpl - a general purpose implementation of VendingMachine interface
-          - Inventory - A type-safe inventory for holding objects, which is an ADAPTER or WRAPPER over java.util.Map
-          - Item - type-safe Enum to represent items supported by vending machine.
-          - Coin - type-safe Enum to represent coins, which is acceptable by vending machine.
-          - Bucket - A Holder class for holding two types together.
-          - SoldOutException - thrown when user selects a product which is sold out
-          - NotSufficientChangeException - thrown when Vending machine doesn't have enough change to support the current transaction.
+Включать в раздел описание решаемой задачи важно если документ предназначен для тех кто не очень знаком с пердметной областью.
 
-          - NotFullPaidException - thrown when the user tries to collect an item, without paying the full amount.
-     
-    - Data structures used
-          - Map data structure is used to implement cash and item inventories.
-          - The List is used to returning changes because it can contain duplicates, i.e. multiple coins of the same denomination.
+#### Main interface, classes and Exceptions
 
-   
-    - Motivation behind design decisions
-         - Factory design pattern is used to encapsulate creation logic of VendingMachine.
-         - Adapter pattern is used to create Inventory by wrapping java.util.Map
-         - java.lang.Enum is used to represent Item and Coins, because of following benefits
-                - compile time safety against entering an invalid item and invalid coin.
-                - no need to write code for checking if selected item or entered coin is valid.
-                - reusable and well encapsulated.
-         - long is used to represent price and totalSales, which are the amount because we are dealing in cents.
-           Not used BigDecimal to represent money, because the vending machine can only hold limited amount, due to finite capacity of coin inventory.
+* VendingMachine - an interface which defines public API of VendingMachine
+* VendingMachineImpl - a general purpose implementation of VendingMachine interface
+* Inventory - A type-safe inventory for holding objects, which is an ADAPTER or WRAPPER over java.util.Map
+* Item - type-safe Enum to represent items supported by vending machine.
+* Coin - type-safe Enum to represent coins, which is acceptable by vending machine.
+* Bucket - A Holder class for holding two types together.
+* SoldOutException - thrown when user selects a product which is sold out
+* NotSufficientChangeException - thrown when Vending machine doesn't have enough change to support the current transaction.
+* NotFullPaidException - thrown when the user tries to collect an item, without paying the full amount.
 
-         -
+* Data structures used
+  - Map data structure is used to implement cash and item inventories.
+  - The List is used to returning changes because it can contain duplicates, i.e. multiple coins of the same denomination.
+* Motivation behind design decisions
+  - Factory design pattern is used to encapsulate creation logic of VendingMachine.
+  - Adapter pattern is used to create Inventory by wrapping java.util.Map
+  - java.lang.Enum is used to represent Item and Coins, because of following benefits
+    * compile time safety against entering an invalid item and invalid coin.
+    * no need to write code for checking if selected item or entered coin is valid.
+    * reusable and well encapsulated.
+  - long is used to represent price and totalSales, which are the amount because we are dealing in cents.
 
-2) Low Leven Design
-    - Methods
-        -  The getChange() method uses a greedy algorithm to find out whether we have sufficient coins to support an amount.
+Not used BigDecimal to represent money, because the vending machine can only hold limited amount, due to finite capacity of coin inventory.
 
-    - Initialization
-         - When Vending Machine will be created, it's initialized with default cash and item inventory. current with quantity 5 for each coin and item.
+###2) Low Leven Design
 
+1) ?
+
+* Methods
+   -  The getChange() method uses a greedy algorithm to find out whether we have sufficient coins to support an amount.
+
+* Initialization
+  - When Vending Machine will be created, it's initialized with default cash and item inventory. current with quantity 5 for each coin and item.
 
 
 2) Testing Strategy
-   - Three primary test cases to testWithExactPrice(), testWithMorePrice() and testRefund() to cover general usecase.
-   - Negative test cases like testing SoldOutException, NotSufficientChangeException or NotFullPaidException
-   -
+   
+- Three primary test cases to testWithExactPrice(), testWithMorePrice() and testRefund() to cover general usecase.
+- Negative test cases like testing SoldOutException, NotSufficientChangeException or NotFullPaidException
 
 3) Benefits
-   - The design uses Abstraction to create reusable, small classes which are easier to read and test.
-   - Encapsulating Items and Coins on their respective class makes it easy to add new Coins and Items.
-   - Inventory is general purpose class and can be used elsewhere, It also encapsulates all inventory operations.
+- The design uses Abstraction to create reusable, small classes which are easier to read and test.
+- Encapsulating Items and Coins on their respective class makes it easy to add new Coins and Items.
+- Inventory is general purpose class and can be used elsewhere, It also encapsulates all inventory operations.
 
 4) Assumption
-   - Vending Machine is single-threaded, only one user will operate at a time.
-   - A call to reset() will reset item and balance i.e. make them zero.
+- Vending Machine is single-threaded, only one user will operate at a time.
+- A call to reset() will reset item and balance i.e. make them zero.
 
+### UML Diagram Vending Machine in Java
 
-
-UML Diagram Vending Machine in Java
 Here is our UML diagram for this solution, generated in Eclipse by using ObjectAid plugin. It let you create UML class diagram from Java code itself. This diagram shows that VendingMachineImpl extends or implements VendingMachine interface. It also shows that it is associated with Item and Inventory classes.
 
-If you are new in Java and not understanding this UML diagram then you should  read UML for Java Programmers by Robert C. Martin , one of the best books to learn about UML and class diagram of  Java programs.
 
-Vending Machine in Java coding, design and UML
-
-
+---
 That's all on this two-part article on designing and implementing Vending Machine in Java using Object Oriented analysis and design. If you have just started learning OOPS or Java, I recommend doing this kind of design related exercise to improve your design skills in Java. You will face a lot of challenges, which will drive further learning and understanding of core OOPS concept. If you are hungry for more of such design problems in Java, you should read  UML for Java Programmers by Robert C. Martin to practice another similar problem of designing a coffee machine in Java. Uncle Bob has explained much better than me, so there is good chance that you will learn something there as well.
