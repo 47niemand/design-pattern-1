@@ -1,7 +1,8 @@
 # Summary
 
 * Examples
-   * [Дизайн торгвого автомата](dizain_torgvogo_avtomata.md)
+   * [Дизайн торгвого автомата ч.1](dizain_torgvogo_avtomata.md)
+   * [Дизайн торгвого автомата ч.2](dizain_torgvogo_avtomata_2.md)
 * [Introdution](README.md)
 * [Design Principles](design_principles/design_principles.md)
    * [Single Responsibility Principle](design_principles/single_responsibility_principle.md)
