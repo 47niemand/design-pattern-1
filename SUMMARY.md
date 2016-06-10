@@ -2,7 +2,7 @@
 
 * Examples
    * [Дизайн торгвого автомата ч.1](dizain_torgvogo_avtomata.md)
-   * [Дизайн торгвого автомата ч.2](dizaintorgvogo_avtomata_2_md.md)
+   * [Java объектно-ориентированный анализа и дизайн - Торговый автомат Часть 2.](dizaintorgvogo_avtomata_2_md.md)
 * [Introdution](README.md)
 * [Design Principles](design_principles/design_principles.md)
    * [Single Responsibility Principle](design_principles/single_responsibility_principle.md)
